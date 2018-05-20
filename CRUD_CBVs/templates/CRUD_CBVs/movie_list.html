@@ -1,0 +1,11 @@
+<h1>CRUD Class Based View Example</h1>
+<ul>
+    {% for movie in object_list %}
+    <li>{{ movie.title }}  {{ movie.genre }}
+    <a href="{% url 'CRUD_CBVs:movie_edit' movie.id %}">edit</a>
+    <a href="{% url 'CRUD_CBVs:movie_delete' movie.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'CRUD_CBVs:movie_new' %}">New</a>

@@ -1,0 +1,11 @@
+<h1>CRUD Function Based View Example</h1>
+<ul>
+    {% for movies in object_list %}
+    <li>{{ movies.title }}  {{ movies.genre }}
+    <a href="{% url 'CRUD_FBVs:movies_edit' movies.id %}">edit</a>
+    <a href="{% url 'CRUD_FBVs:movies_delete' movies.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'CRUD_FBVs:movies_new' %}">Add</a>
